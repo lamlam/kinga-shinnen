@@ -2,7 +2,7 @@ import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import { useState, useEffect, useCallback } from 'react';
 import type { VFC } from 'react';
-import { RefreshIcon } from '@heroicons/react/solid';
+import { RefreshIcon, ExternalLinkIcon } from '@heroicons/react/solid';
 
 function shuffle(arr: string[]): string[] {
   for (var i = arr.length - 1; i > 0; i--) {
@@ -52,6 +52,30 @@ const HazureGreeting: VFC<GreetingProps> = ({
       </button>
     </>
   );
+};
+
+type FooterProps = {};
+const Footer: VFC<FooterProps> = () => {
+  return (
+    <footer className="justify-self-end flex justify-center mb-4">
+      <a
+        href="https://github.com/lamlam/kinga-shinnen"
+        className="text-center underline"
+        target="_blank"
+      >
+        GitHub
+      </a>
+      <ExternalLinkIcon className="w-4 h-4" />
+    </footer>
+  );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const siteURL: string =
+    process.env.SITE_URL || process.env.VERCEL_URL || 'http://localhost:3000';
+  return {
+    props: { siteURL },
+  };
 };
 
 const Top: NextPage = ({
@@ -108,16 +132,9 @@ const Top: NextPage = ({
           />
         )}
       </div>
+      <Footer />
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const siteURL: string =
-    process.env.SITE_URL || process.env.VERCEL_URL || 'http://localhost:3000';
-  return {
-    props: { siteURL },
-  };
 };
 
 export default Top;
