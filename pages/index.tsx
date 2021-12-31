@@ -69,7 +69,7 @@ const Top: NextPage = ({
   return (
     <>
       <Head>
-        <title>新年の挨拶</title>
+        <title>謹賀新年</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           rel="apple-touch-icon"
@@ -91,8 +91,9 @@ const Top: NextPage = ({
         <link rel="preload" href="/matsu.svg" as="image" />
         <meta property="og:url" content={siteURL} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/cover.png" />
+        <meta property="og:image" content={siteURL + '/cover.png'} />
         <meta property="og:title" content="謹賀新年" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className="min-h-screen flex flex-col items-center justify-center">
         {greeting === '謹賀新年' ? (
