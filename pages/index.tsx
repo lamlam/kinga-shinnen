@@ -31,7 +31,7 @@ const AtariGreeting: VFC<GreetingProps> = ({
           今年もよろしくお願いします。
         </p>
       </div>
-      <button onClick={reloadEventHandler}>
+      <button onClick={reloadEventHandler} aria-label="reload">
         <img src="/matsu.svg" alt="松飾り" className="w-10 h-10" />
       </button>
     </>
@@ -47,7 +47,7 @@ const HazureGreeting: VFC<GreetingProps> = ({
       <div className="mb-8">
         <h1 className="md:text-9xl text-7xl font-bold">{greeting}</h1>
       </div>
-      <button onClick={reloadEventHandler}>
+      <button onClick={reloadEventHandler} aria-label="reload">
         <RefreshIcon className="w-10 h-10 text-gray-500" />
       </button>
     </>
