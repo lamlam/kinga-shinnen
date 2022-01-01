@@ -116,7 +116,7 @@ const Top: NextPage = ({
         <meta property="og:title" content="謹賀新年" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="min-h-screen flex flex-col items-center">
+      <div className="min-h-screen flex flex-col items-center min-height-screen-ios">
         <main className="grow flex flex-col items-center justify-center ">
           {greeting === '謹賀新年' ? (
             <AtariGreeting
