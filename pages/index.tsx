@@ -33,7 +33,7 @@ const AtariGreeting: VFC<GreetingProps> = ({
         </p>
       </div>
       <button onClick={reloadEventHandler} aria-label="reload">
-        <Image src="/matsu.svg" alt="松飾り" className="w-10 h-10" />
+        <Image src="/matsu.svg" alt="松飾り" width="40px" height="40px" />
       </button>
     </>
   );
