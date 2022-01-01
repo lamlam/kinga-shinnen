@@ -109,7 +109,6 @@ const Top: NextPage = ({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="preload" href="/matsu.svg" as="image" />
         <meta property="og:url" content={siteURL} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={siteURL + '/cover.png'} />
