@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useState, useCallback } from 'react';
 import type { VFC } from 'react';
 import { RefreshIcon, ExternalLinkIcon } from '@heroicons/react/solid';
-import Image from 'next/image';
 
 function shuffle(arr: string[]): string[] {
   for (var i = arr.length - 1; i > 0; i--) {
@@ -33,7 +32,7 @@ const AtariGreeting: VFC<GreetingProps> = ({
         </p>
       </div>
       <button onClick={reloadEventHandler} aria-label="reload">
-        <Image src="/matsu.svg" alt="松飾り" width="40px" height="40px" />
+        <img src="/matsu.svg" alt="松飾り" className="w-10 h-10" />
       </button>
     </>
   );
@@ -110,6 +109,7 @@ const Top: NextPage = ({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+        <link rel="preload" href="/matsu.svg" as="image" />
         <meta property="og:url" content={siteURL} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={siteURL + '/cover.png'} />
