@@ -86,10 +86,6 @@ const Top: NextPage = ({
     setGreeting(shuffle(['謹', '賀', '新', '年']).join(''));
   }, []);
 
-  useEffect(() => {
-    createRandomGreeting();
-  }, []);
-
   return (
     <>
       <Head>
