@@ -57,7 +57,7 @@ const HazureGreeting: VFC<GreetingProps> = ({
 type FooterProps = {};
 const Footer: VFC<FooterProps> = () => {
   return (
-    <footer className="justify-self-end flex justify-center mb-4">
+    <div className="flex justify-center mt-4 mb-4">
       <a
         href="https://github.com/lamlam/kinga-shinnen"
         className="text-center underline"
@@ -66,7 +66,7 @@ const Footer: VFC<FooterProps> = () => {
         GitHub
       </a>
       <ExternalLinkIcon className="w-4 h-4" />
-    </footer>
+    </div>
   );
 };
 
@@ -119,20 +119,24 @@ const Top: NextPage = ({
         <meta property="og:title" content="謹賀新年" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="min-h-screen flex flex-col items-center justify-center">
-        {greeting === '謹賀新年' ? (
-          <AtariGreeting
-            greeting={greeting}
-            reloadEventHandler={createRandomGreeting}
-          />
-        ) : (
-          <HazureGreeting
-            greeting={greeting}
-            reloadEventHandler={createRandomGreeting}
-          />
-        )}
+      <div className="min-h-screen flex flex-col items-center">
+        <main className="grow flex flex-col items-center justify-center ">
+          {greeting === '謹賀新年' ? (
+            <AtariGreeting
+              greeting={greeting}
+              reloadEventHandler={createRandomGreeting}
+            />
+          ) : (
+            <HazureGreeting
+              greeting={greeting}
+              reloadEventHandler={createRandomGreeting}
+            />
+          )}
+        </main>
+        <footer className="flex-none">
+          <Footer />
+        </footer>
       </div>
-      <Footer />
     </>
   );
 };
